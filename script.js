@@ -8,34 +8,106 @@ var card20=document.querySelector('#card20');
 var card21=document.querySelector('#card21');
 var card22=document.querySelector('#card22');
 var reset=document.querySelector('.reset');
+var count=0;
 
 
 card00.addEventListener('click', function (event) {
-    card00.innerHTML='X';
+    if(card00.innerHTML==''){
+        if(count%2==0){
+            card00.innerHTML='X';
+        }
+        else{
+            card00.innerHTML='O';
+        }
+        count++;
+    }
 });
 card01.addEventListener('click', function (event) {
-    card01.innerHTML='X';
+    if(card01.innerHTML==''){
+        if(count%2==0){
+            card01.innerHTML='X';
+        }
+        else{
+            card01.innerHTML='O';
+        }
+    }
 });
 card02.addEventListener('click', function (event) {
-    card02.innerHTML='X';
+    if(card02.innerHTML==''){
+        if(count%2==0){
+            card02.innerHTML='X';
+        }
+        else{
+            card02.innerHTML='O';
+        }
+        count++;
+    }
 });
 card10.addEventListener('click', function (event) {
-    card10.innerHTML='X';
+    if(card10.innerHTML==''){
+        if(count%2==0){
+            card10.innerHTML='X';
+        }
+        else{
+            card10.innerHTML='O';
+        }
+        count++;
+    }
 });
 card11.addEventListener('click', function (event) {
-    card11.innerHTML='X';
+    if(card11.innerHTML==''){
+        if(count%2==0){
+            card11.innerHTML='X';
+        }
+        else{
+            card11.innerHTML='O';
+        }
+        count++;
+    }
 });
 card12.addEventListener('click', function (event) {
-    card12.innerHTML='X';
+    if(card12.innerHTML==''){
+        if(count%2==0){
+            card12.innerHTML='X';
+        }
+        else{
+            card12.innerHTML='O';
+        }
+        count++;
+    }
 });
 card20.addEventListener('click', function (event) {
-    card20.innerHTML='X';
+    if(card20.innerHTML==''){
+        if(count%2==0){
+            card20.innerHTML='X';
+        }
+        else{
+            card20.innerHTML='O';
+        }
+        count++;
+    }
 });
 card21.addEventListener('click', function (event) {
-    card21.innerHTML='X';
+    if(card21.innerHTML==''){
+        if(count%2==0){
+            card21.innerHTML='X';
+        }
+        else{
+            card21.innerHTML='O';
+        }
+        count++;
+    }
 });
 card22.addEventListener('click', function (event) {
-    card22.innerHTML='X';
+    if(card22.innerHTML==''){
+        if(count%2==0){
+            card22.innerHTML='X';
+        }
+        else{
+            card22.innerHTML='O';
+        }
+    }
+    count++;
 });
 
 
@@ -49,4 +121,5 @@ reset.addEventListener('click',function(event){
     card20.innerHTML="";
     card21.innerHTML="";
     card22.innerHTML="";
+    count=0;
 });
