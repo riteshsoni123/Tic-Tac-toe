@@ -9,6 +9,7 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    margin-top: 100px;
 }
 .game{
     border: 2px solid rgb(0, 0, 0);
@@ -18,6 +19,7 @@
     flex-direction: column;
     width: 30%;
     aspect-ratio: 1 / 1;
+    position: relative;
 }
 .row{
     display: flex;
@@ -38,4 +40,27 @@
 }
 .card:hover{
     background-color: rgba(88,88,88,0.5);
+}
+.final{
+    border: 2px solid red;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: fit-content;
+    height: 26vw;
+    width: 15px;
+    color: rgb(0, 0, 0);
+    font-size: 60vw;
+    overflow: hidden;
+    top: 24px;
+    left: 65px;
+
+
+    /* transform: rotate(45deg);
+    top: 27px;
+    left: 222px; */
+
+
+
 }

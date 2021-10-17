@@ -1,125 +1,118 @@
-var card00=document.querySelector('#card00');
-var card01=document.querySelector('#card01');
-var card02=document.querySelector('#card02');
-var card10=document.querySelector('#card10');
-var card11=document.querySelector('#card11');
-var card12=document.querySelector('#card12');
-var card20=document.querySelector('#card20');
-var card21=document.querySelector('#card21');
-var card22=document.querySelector('#card22');
+
+var card=new Array(3);
+for(var i=0;i<3;i++){
+    card[i]=new Array(3);
+}
+
+card[0][0]=document.querySelector('#card00');
+card[0][1]=document.querySelector('#card01');
+card[0][2]=document.querySelector('#card02');
+card[1][0]=document.querySelector('#card10');
+card[1][1]=document.querySelector('#card11');
+card[1][2]=document.querySelector('#card12');
+card[2][0]=document.querySelector('#card20');
+card[2][1]=document.querySelector('#card21');
+card[2][2]=document.querySelector('#card22');
 var reset=document.querySelector('.reset');
+var result=document.querySelector('#result');
 var count=0;
 
+function check_status(){
+    if((card[0][0].innerHTML==card[0][1].innerHTML&&card[0][1].innerHTML==card[0][2].innerHTML)&&card[0][0].innerHTML!=''){
+        result.style.transform='rotate(90deg)';
+        result.style.top='-125px';
+        result.style.left='222px';
+    }
+    else if((card[1][0].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[1][2].innerHTML)&&card[1][0].innerHTML!=''){
+        result.style.transform='rotate(90deg)';
+        result.style.top='30px';
+        result.style.left='222px';
+    }
+    else if((card[2][0].innerHTML==card[2][1].innerHTML&&card[2][1].innerHTML==card[2][2].innerHTML)&&card[2][0].innerHTML!=''){
+        result.style.transform='rotate(90deg)';
+        result.style.top='180px';
+        result.style.left='222px';
+    }
+    else if((card[0][0].innerHTML==card[1][0].innerHTML&&card[1][0].innerHTML==card[2][0].innerHTML)&&card[0][0].innerHTML!=''){
 
-card00.addEventListener('click', function (event) {
-    if(card00.innerHTML==''){
+    }
+    else if((card[0][1].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[2][1].innerHTML)&&card[0][1].innerHTML!=''){
+        result.style.left='220px';
+    }
+    else if((card[0][2].innerHTML==card[1][2].innerHTML&&card[1][2].innerHTML==card[2][2].innerHTML)&&card[0][2].innerHTML!=''){
+        result.style.left='370px';
+    }
+    else if((card[0][0].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[2][2].innerHTML)&&card[0][0].innerHTML!=''){
+        result.style.transform='rotate(-45deg)';
+        result.style.top='27px';
+        result.style.left='222px';
+    }
+    else if((card[0][2].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[2][0].innerHTML)&&card[0][2].innerHTML!=''){
+        result.style.transform='rotate(45deg)';
+        result.style.top='27px';
+        result.style.left='222px';
+    }
+}
+function change(i,j){
+    if(card[i][j].innerHTML==''){
         if(count%2==0){
-            card00.innerHTML='X';
+            card[i][j].innerHTML='X';
         }
         else{
-            card00.innerHTML='O';
+            card[i][j].innerHTML='O';
         }
         count++;
     }
+}
+
+card[0][0].addEventListener('click', function (event) {
+    change(0,0);
+    check_status();
 });
-card01.addEventListener('click', function (event) {
-    if(card01.innerHTML==''){
-        if(count%2==0){
-            card01.innerHTML='X';
-        }
-        else{
-            card01.innerHTML='O';
-        }
-    }
+card[0][1].addEventListener('click', function (event) {
+    change(0,1);
+    check_status();
 });
-card02.addEventListener('click', function (event) {
-    if(card02.innerHTML==''){
-        if(count%2==0){
-            card02.innerHTML='X';
-        }
-        else{
-            card02.innerHTML='O';
-        }
-        count++;
-    }
+card[0][2].addEventListener('click', function (event) {
+    change(0,2);
+    // console.log('bazinga');
+    check_status();
 });
-card10.addEventListener('click', function (event) {
-    if(card10.innerHTML==''){
-        if(count%2==0){
-            card10.innerHTML='X';
-        }
-        else{
-            card10.innerHTML='O';
-        }
-        count++;
-    }
+card[1][0].addEventListener('click', function (event) {
+    change(1,0);
+    check_status();
 });
-card11.addEventListener('click', function (event) {
-    if(card11.innerHTML==''){
-        if(count%2==0){
-            card11.innerHTML='X';
-        }
-        else{
-            card11.innerHTML='O';
-        }
-        count++;
-    }
+card[1][1].addEventListener('click', function (event) {
+    change(1,1);
+    check_status();
 });
-card12.addEventListener('click', function (event) {
-    if(card12.innerHTML==''){
-        if(count%2==0){
-            card12.innerHTML='X';
-        }
-        else{
-            card12.innerHTML='O';
-        }
-        count++;
-    }
+card[1][2].addEventListener('click', function (event) {
+    change(1,2);
+    check_status();
 });
-card20.addEventListener('click', function (event) {
-    if(card20.innerHTML==''){
-        if(count%2==0){
-            card20.innerHTML='X';
-        }
-        else{
-            card20.innerHTML='O';
-        }
-        count++;
-    }
+card[2][0].addEventListener('click', function (event) {
+    change(2,0);
+    check_status();
 });
-card21.addEventListener('click', function (event) {
-    if(card21.innerHTML==''){
-        if(count%2==0){
-            card21.innerHTML='X';
-        }
-        else{
-            card21.innerHTML='O';
-        }
-        count++;
-    }
+card[2][1].addEventListener('click', function (event) {
+    change(2,1);
+    check_status();
 });
-card22.addEventListener('click', function (event) {
-    if(card22.innerHTML==''){
-        if(count%2==0){
-            card22.innerHTML='X';
-        }
-        else{
-            card22.innerHTML='O';
-        }
-    }
-    count++;
+card[2][2].addEventListener('click', function (event) {
+    change(2,2);
+    check_status();
 });
 
 
 reset.addEventListener('click',function(event){
-    card00.innerHTML="";
-    card01.innerHTML="";
-    card02.innerHTML="";
-    card10.innerHTML="";
-    card11.innerHTML="";
-    card12.innerHTML="";
-    card20.innerHTML="";
-    card21.innerHTML="";
-    card22.innerHTML="";
+    card[0][0].innerHTML="";
+    card[0][1].innerHTML="";
+    card[0][2].innerHTML="";
+    card[1][0].innerHTML="";
+    card[1][1].innerHTML="";
+    card[1][2].innerHTML="";
+    card[2][0].innerHTML="";
+    card[2][1].innerHTML="";
+    card[2][2].innerHTML="";
     count=0;
 });
