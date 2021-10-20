@@ -41,18 +41,21 @@
 .card:hover{
     background-color: rgba(88,88,88,0.5);
 }
-.final{
+.contain-final{
     border: 2px solid red;
     position: absolute;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
-    height: fit-content;
-    height: 26vw;
-    width: 15px;
-    color: rgb(0, 0, 0);
-    font-size: 60vw;
     overflow: hidden;
-    top: 24px;
-    left: 65px;
+    height: 15px;
+    width: 29vw;
+    top: 0%;
+    left: 0%;
+    /* transform: rotate(45deg); */
+}
+.bar{
+    height: 29vw;
+    width: 15px;
+    font-size: 50vw;
 }
