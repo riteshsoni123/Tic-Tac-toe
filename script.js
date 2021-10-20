@@ -126,6 +126,7 @@ reset.addEventListener('click',function(event){
     card[2][2].innerHTML="";
     result1.style.display='none';
     result2.style.display='none';
+    result1.style.transform='rotate(0)'
     count=0;
 });
 

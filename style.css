@@ -12,7 +12,6 @@
     margin-top: 100px;
 }
 .game{
-    border: 2px solid rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,7 +28,7 @@
     width: 100%;
 }
 .card{
-    border: 2px solid red;
+    border: 2px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -42,7 +41,6 @@
     background-color: rgba(88,88,88,0.5);
 }
 .contain-final{
-    border: 2px solid red;
     position: absolute;
     display: none;
     align-items: center;
@@ -52,10 +50,37 @@
     width: 29vw;
     top: 0%;
     left: 0%;
-    /* transform: rotate(45deg); */
 }
 .bar{
     height: 29vw;
     width: 15px;
     font-size: 50vw;
+}
+#card00{
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+}
+#card01{
+    border-top: 2px solid white;
+}
+#card02{
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+}
+#card10{
+    border-left: 2px solid white;
+}
+#card12{
+    border-right: 2px solid white;
+}
+#card20{
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+}
+#card21{
+    border-bottom: 2px solid white;
+}
+#card22{
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
 }
