@@ -2,6 +2,8 @@
 var reset=document.querySelector('.reset');
 var result1=document.querySelector('#result1');
 var result2=document.querySelector('#result2');
+var turn=document.getElementsByClassName('turn')[0];
+// console.log(turn.innerHTML);
 var count=0;
 var card=document.getElementsByClassName('card');
 const check_status=()=>{
@@ -29,6 +31,12 @@ const check_status=()=>{
                 result2.style.transform=`rotate(${e[5]}deg)`;
                 result2.style.height='29vw';
             }
+            if(card[e[0]].innerHTML=='X'){
+                turn.innerHTML="X Won";
+            }
+            else{
+                turn.innerHTML="O Won";
+            }
         }
     })
 }
@@ -38,9 +46,11 @@ Array.from(card).forEach(element=>{
         if(element.innerHTML==''){
             if(count%2==0){
                 element.innerHTML='X';
+                turn.innerHTML="O's Turn"
             }
             else{
                 element.innerHTML='O';
+                turn.innerHTML="X's Turn"
             }
             check_status();
             count++;
@@ -52,8 +62,9 @@ reset.addEventListener('click',function(event){
     Array.from(card).forEach(element=>{
         element.innerHTML='';
     });
-    result1.style.width="0";
+    result1.style.width="0"; 
     result2.style.height="0";
     result1.style.transform='rotate(0)'
+    turn.innerHTML="X's Turn";
     count=0;
 });
