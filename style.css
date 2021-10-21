@@ -42,7 +42,7 @@
 }
 .contain-final{
     position: absolute;
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -56,31 +56,23 @@
     width: 5px;
     font-size: 50vw;
 }
-#card00{
-    border-top: 2px solid white;
-    border-left: 2px solid white;
+#result1{
+    width: 0;
+    transition: width 1s ease-in-out;
 }
-#card01{
+#result2{
+    height: 0;
+    transition: height 1s ease-in-out;
+}
+.bt{
     border-top: 2px solid white;
 }
-#card02{
-    border-top: 2px solid white;
+.br{
     border-right: 2px solid white;
 }
-#card10{
+.bl{
     border-left: 2px solid white;
 }
-#card12{
-    border-right: 2px solid white;
-}
-#card20{
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
-}
-#card21{
-    border-bottom: 2px solid white;
-}
-#card22{
-    border-right: 2px solid white;
+.bb{
     border-bottom: 2px solid white;
 }

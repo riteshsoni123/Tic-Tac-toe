@@ -21,13 +21,13 @@ const check_status=()=>{
                 result1.style.top=`${e[3]}%`;
                 result1.style.left=`${e[4]}%`;
                 result1.style.transform=`rotate(${e[5]}deg)`;
-                myMoveres1();
+                result1.style.width='29vw';
             }
             else{
                 result2.style.top=`${e[3]}%`;
                 result2.style.left=`${e[4]}%`;
                 result2.style.transform=`rotate(${e[5]}deg)`;
-                myMoveres2();
+                result2.style.height='29vw';
             }
         }
     })
@@ -52,44 +52,8 @@ reset.addEventListener('click',function(event){
     Array.from(card).forEach(element=>{
         element.innerHTML='';
     });
-    result1.style.display='none';
-    result2.style.display='none';
+    result1.style.width="0";
+    result2.style.height="0";
     result1.style.transform='rotate(0)'
     count=0;
 });
-
-
-function myMoveres1() {
-    result1.style.width=0+'vw';
-    result1.style.display='flex';
-    var id = null;
-    var pos = 0;
-    clearInterval(id);
-    id = setInterval(frame, 20);
-    function frame() {
-        if (pos == 29) {
-            clearInterval(id);
-        } 
-        else {
-            pos++;
-            result1.style.width=pos+'vw';
-        }
-    }
-}
-function myMoveres2() {
-    result2.style.height=0+'vw';
-    result2.style.display='flex';
-    var id = null;
-    var pos = 0;
-    clearInterval(id);
-    id = setInterval(frame, 20);
-    function frame() {
-        if (pos == 29) {
-            clearInterval(id);
-        } 
-        else {
-            pos++;
-            result2.style.height=pos+'vw';
-        }
-    }
-} 
