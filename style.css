@@ -46,14 +46,14 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    height: 15px;
+    height: 5px;
     width: 29vw;
     top: 0%;
     left: 0%;
 }
 .bar{
     height: 29vw;
-    width: 15px;
+    width: 5px;
     font-size: 50vw;
 }
 #card00{

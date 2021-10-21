@@ -18,49 +18,36 @@ var result1=document.querySelector('#result1');
 var result2=document.querySelector('#result2');
 var count=0;
 
-function check_status(){
-    if((card[0][0].innerHTML==card[0][1].innerHTML&&card[0][1].innerHTML==card[0][2].innerHTML)&&card[0][0].innerHTML!=''){
-        result1.style.top='16%';
-        result1.style.left='1%';
-        myMoveres1();
-    }
-    else if((card[1][0].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[1][2].innerHTML)&&card[1][0].innerHTML!=''){
-        result1.style.top='48%';
-        result1.style.left='1%';
-        myMoveres1();
-    }
-    else if((card[2][0].innerHTML==card[2][1].innerHTML&&card[2][1].innerHTML==card[2][2].innerHTML)&&card[2][0].innerHTML!=''){
-        result1.style.top='81%';
-        result1.style.left='1%';
-        myMoveres1();
-    }
-    else if((card[0][0].innerHTML==card[1][0].innerHTML&&card[1][0].innerHTML==card[2][0].innerHTML)&&card[0][0].innerHTML!=''){
-        result2.style.top='1%';
-        result2.style.left='15%';
-        myMoveres2();
-    }
-    else if((card[0][1].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[2][1].innerHTML)&&card[0][1].innerHTML!=''){
-        result2.style.top='1%';
-        result2.style.left='48%';
-        myMoveres2();
-    }
-    else if((card[0][2].innerHTML==card[1][2].innerHTML&&card[1][2].innerHTML==card[2][2].innerHTML)&&card[0][2].innerHTML!=''){
-        result2.style.top='1%';
-        result2.style.left='81%';
-        myMoveres2();
-    }
-    else if((card[0][0].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[2][2].innerHTML)&&card[0][0].innerHTML!=''){
-        result1.style.transform='rotate(45deg)';
-        result1.style.top='48%';
-        result1.style.left='0%';
-        myMoveres1();
-    }
-    else if((card[0][2].innerHTML==card[1][1].innerHTML&&card[1][1].innerHTML==card[2][0].innerHTML)&&card[0][2].innerHTML!=''){
-        result1.style.transform='rotate(-45deg)';
-        result1.style.top='48%';
-        result1.style.left='0%';
-        myMoveres1();
-    }
+const check_status=()=>{
+    var card1=document.getElementsByClassName('card');
+    var win=[
+        [0,1,2,16,1,0,1],
+        [3,4,5,48,1,0,1],
+        [6,7,8,81,1,0,1],
+        [0,3,6,1,15,0,2],
+        [1,4,7,1,48,0,2],
+        [2,5,8,1,81,0,2],
+        [0,4,8,48,0,45,1],
+        [2,4,6,48,0,-45,1]
+    ];
+    win.forEach(e=>{
+        // console.log(card1[e[0]] );
+        if((card1[e[0]].innerHTML==card1[e[1]].innerHTML&&card1[e[1]].innerHTML==card1[e[2]].innerHTML)&&(card1[e[0]].innerHTML!="")){
+            // console.log('bazinga');
+            if(e[6]==1){
+                result1.style.top=`${e[3]}%`;
+                result1.style.left=`${e[4]}%`;
+                result1.style.transform=`rotate(${e[5]}deg)`;
+                myMoveres1();
+            }
+            else{
+                result2.style.top=`${e[3]}%`;
+                result2.style.left=`${e[4]}%`;
+                result2.style.transform=`rotate(${e[5]}deg)`;
+                myMoveres2();
+            }
+        }
+    })
 }
 
 function change(i,j){
@@ -85,7 +72,6 @@ card[0][1].addEventListener('click', function (event) {
 });
 card[0][2].addEventListener('click', function (event) {
     change(0,2);
-    // console.log('bazinga');
     check_status();
 });
 card[1][0].addEventListener('click', function (event) {
@@ -164,4 +150,4 @@ function myMoveres2() {
             result2.style.height=pos+'vw';
         }
     }
-}
+} 
