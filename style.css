@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     margin-top: 100px;
 }
@@ -16,7 +17,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 30%;
+    width: 36%;
     aspect-ratio: 1 / 1;
     position: relative;
 }
@@ -42,11 +43,10 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-left: 50px;
     font-size: 23px;
+    width: 20%;
 }
 .reset{
-    /* margin-left: 50px; */
     margin-top: 20px;
     width: 70px;
     height: 40px;
@@ -94,4 +94,12 @@
 }
 .bb{
     border-bottom: 2px solid white;
+}
+@media (max-width:800px){
+    .info{
+        width: 50%;
+    }
+    .game{
+        width: 65%;
+    }
 }
