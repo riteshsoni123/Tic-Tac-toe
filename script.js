@@ -1,9 +1,7 @@
-
 var reset=document.querySelector('.reset');
 var result1=document.querySelector('#result1');
 var result2=document.querySelector('#result2');
 var turn=document.getElementsByClassName('turn')[0];
-// console.log(turn.innerHTML);
 var count=0;
 var card=document.getElementsByClassName('card');
 const check_status=()=>{
