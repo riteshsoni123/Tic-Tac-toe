@@ -4,16 +4,17 @@ var result2=document.querySelector('#result2');
 var turn=document.getElementsByClassName('turn')[0];
 var count=0;
 var card=document.getElementsByClassName('card');
+var audio=new Audio('beep.wav');
 const check_status=()=>{
     var win=[
-        [0,1,2,16,1,0,1],
-        [3,4,5,48,1,0,1],
-        [6,7,8,81,1,0,1],
-        [0,3,6,1,15,0,2],
-        [1,4,7,1,48,0,2],
-        [2,5,8,1,81,0,2],
-        [0,4,8,48,0,45,1],
-        [2,4,6,48,0,-45,1]
+        [0,1,2,16,9,0,1],
+        [3,4,5,49,9,0,1],
+        [6,7,8,82,9,0,1],
+        [0,3,6,9,16,0,2],
+        [1,4,7,9,49,0,2],
+        [2,5,8,9,82,0,2],
+        [0,4,8,48,8,45,1],
+        [2,4,6,48,8,-45,1]
     ];
     win.forEach(e=>{
         if((card[e[0]].innerHTML==card[e[1]].innerHTML&&card[e[1]].innerHTML==card[e[2]].innerHTML)&&(card[e[0]].innerHTML!="")){
@@ -42,6 +43,7 @@ const check_status=()=>{
 Array.from(card).forEach(element=>{
     element.addEventListener('click',()=>{
         if(element.innerHTML==''){
+            audio.play();
             if(count%2==0){
                 element.innerHTML='X';
                 turn.innerHTML="O's Turn"
